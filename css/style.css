@@ -1,60 +1,80 @@
-/* body {
-    margin: 0;
-    height: 600px;
-    display: grid;
-    grid-template-rows: auto 1fr;
-  }
-  
-  h1 {
-      color:aqua;
-  }
-  header {
-    font-size: 6vmin;
-    padding: 1vmin;
-    background-color: var(--accent-dark);
-    color: white;
-    text-align: center;
-    letter-spacing: .5vmin;
-  }
-  
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .girl {
-      width: 50px;
-      height: auto;
-  } */
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 50px 50px 50px 100px;
+  height: 300px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
 
+h1 {
+  color: darkslateblue;
+  text-align: center;
+  font-family: "Permanent Marker", cursive;
+}
 
-  .fx {
-    -webkit-display: flex;
-    display: flex;
-    margin-left: -20px;
-    margin-right: -20px;
-  }
-  
-  .fx > div {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  
-  .fx > div:first-child {
-     width: 30%;
-  }
-  
-  .flex {
-    -webkit-flex: 1;
-    flex: 1;
-    color:black;
-  }
-  
-  #test-target {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-  }
+h2 {
+  color: darkgreen;
+  text-align: center;
+}
+header {
+  font-size: 6vmin;
+  padding: 1vmin;
+  background-color: var(--accent-dark);
+  color: white;
+  text-align: center;
+  letter-spacing: 0.5vmin;
+}
+
+main {
+  display: block;
+  height: 500px;
+  width: 800px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: thistle;
+}
+
+aside {
+  background-color: #a2b4da;
+  grid-column: 1 / 3;
+}
+
+.gameBoard {
+  background-image: url("/Users/ryannthompson/GA-main/code/catcall-karma-game-project/map-image.jpg");
+
+  background-repeat: no-repeat;
+  background-size: 500px 500px;
+}
+
+.flex-ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.apartment {
+  background-color: #a2cbb6;
+  width: 80px;
+  height: auto;
+  margin-left: 65px;
+}
+
+#playerGirl {
+  width: 50px;
+  height: auto;
+  margin-left: -50px;
+  margin-bottom: 50px;
+  flex-direction: column;
+}
+
+#man1 {
+  width: 15px;
+  height: auto;
+  margin-left: 140px;
+  margin-bottom: 5px;
+  flex-direction: column;
+}
