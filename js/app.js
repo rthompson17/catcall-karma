@@ -23,7 +23,11 @@
     }
 
     function moveUp() {
-        playerImg.style.top = parseInt(playerImg.style.top) - 2 + "px";
+        if(playerImg.style.top > "-5px") {
+        playerImg.style.top = parseInt(playerImg.style.top) - 5 + "px";
+        } 
+        checkGoal();
+        // can use this function to check on encounters with the catcallers
     }
     window.onload = init; // gameStart will init
 
@@ -32,13 +36,14 @@
 
 const boardLimit = document.getElementById("gameBoard");
 function checkGoal(){
-    let characterTop = parseInt(window.getComputedStyle("#playerGirl").getPropertyValue("top"));
-    if(characterTop<=0){
+    let characterTop = playerImg.style.top;
+    console.log(characterTop);
+    if(characterTop<="-5px"){
         alert("Game over");
-    }
+    } // can check "mental health" within this function
 }
 
-//setInterval(checkGoal, 1000);
+// setInterval(checkGoal, 10);
 
 
 
