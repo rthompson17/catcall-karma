@@ -44,8 +44,11 @@ aside {
 }
 
 .gameBoard {
-  background-image: url("/Users/ryannthompson/GA-main/code/catcall-karma-game-project/map-image.jpg");
-
+  display: flex;
+  align-items: flex-start;
+  align-content: space-between;
+  justify-content: flex-start;
+  background-image: url("/Users/ryannthompson/GA-main/code/catcall-karma-game-project/images/map-image.jpg");
   background-repeat: no-repeat;
   background-size: 500px 500px;
 }
@@ -60,21 +63,74 @@ aside {
   background-color: #a2cbb6;
   width: 80px;
   height: auto;
-  margin-left: 65px;
+  margin-left:70px;
+  margin-top: -15px;
+}
+
+#subway {
+  display: flex;
+  width: 50px;
+  height: auto;
+  margin-left: 100px;
+  margin-top: -50px;
+}
+
+#time {
+  margin-left: 500px;
+  position: relative;
 }
 
 #playerGirl {
-  width: 50px;
+  width: 25px;
   height: auto;
-  margin-left: -50px;
+  position: relative;
+    left: 149px;
+    top: 406px;
+  /* margin-left: -50px;
   margin-bottom: 50px;
-  flex-direction: column;
+  flex-direction: column; */
+  
+}
+div.men img {
+  display: flex;
+  width: 15px;
+  height: auto;
 }
 
 #man1 {
-  width: 15px;
-  height: auto;
-  margin-left: 140px;
-  margin-bottom: 5px;
-  flex-direction: column;
+  margin-left: 181px;
+  margin-bottom: 26px;
 }
+
+#man2 {
+  margin-left: 182px;
+  margin-bottom: 49px;
+}
+
+#man3 {
+  margin-left: 140px;
+  margin-bottom: 33px;
+}
+
+#man4 {
+  margin-left: 145px;
+  margin-bottom: 48px;
+}
+
+#man5 {
+  margin-left: 182px;
+  margin-bottom: 23px;
+}
+
+#man6 {
+  margin-left: 148px;
+  margin-bottom: 3px;
+}
+
+
+
+
+
+
+
+
