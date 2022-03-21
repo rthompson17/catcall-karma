@@ -75,7 +75,7 @@ aside {
   margin-top: -50px;
 }
 
-#time {
+#timer {
   margin-left: 500px;
   position: relative;
 }
@@ -95,6 +95,8 @@ div.men img {
   display: flex;
   width: 15px;
   height: auto;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
 }
 
 #man1 {
