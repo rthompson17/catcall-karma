@@ -29,7 +29,7 @@ const smile = new Audio("audio/smile-for-us.wav");
 
     function moveUp() {
         if(playerImg.style.top > "-70px") {
-        playerImg.style.top = parseInt(playerImg.style.top) - 25 + "px";
+        playerImg.style.top = parseInt(playerImg.style.top) - 2 + "px";
         } 
         checkGoal();
         // can use this function to check on encounters with the catcallers
@@ -68,50 +68,50 @@ function checkGoal(){
 
 // setInterval(checkGoal, 10);
 
-   // ------------ CCOUNTDOWN TIMER ---------------- //
-//    function startTimer(duration, display) {
-//     var timer = duration, minutes, seconds;
-//     setInterval(function () {
-//         minutes = parseInt(timer / 60, 10);
-//         seconds = parseInt(timer % 60, 10);
+   // ------------ COUNTDOWN TIMER ---------------- //
+   
+//event listener -- get setSeconds to begin on button click from "Start Game"
 
-//         minutes = minutes < 10 ? "0" + minutes : minutes;
-//         seconds = seconds < 10 ? "0" + seconds : seconds;
+// document.getElementById('#startGame').addEventListener('click', x);
 
-//         display.textContent = minutes + ":" + seconds;
+   
+let days = 0; //starting number of days
+let hours = 0; // starting number of hours
+let minutes = 0; // starting number of minutes
+let seconds = 1; // starting number of seconds
 
-//         if (--timer < 0) {
-//             timer = duration;
-//         }
-//     }, 1000);
-// }
+// converts all to seconds
+let totalSeconds =
+days * 60 * 60 * 24 + hours * 60 * 60 + minutes * 60 + seconds;
 
-// let timerStart = function () {
-//     var fiveMinutes = 60 * 5,
-//         display = document.querySelector('#time');
-//     startTimer(fiveMinutes, display); 
-// };  
-  
-//////////////////////
-var timerClock = new Time("35").getTime();
+//temporary seconds holder
+let tempSeconds = totalSeconds;
+
+// calculates number of days, hours, minutes and seconds from a given number of seconds
+const convert = (value, inSeconds) => {
+if (value > inSeconds) {
+    let x = value % inSeconds;
+    tempSeconds = x;
+    return (value - x) / inSeconds;
+} else {
+    return 0;
+}
+};
+
+// //sets seconds
+const setSeconds = (s) => {
+document.querySelector("#seconds").textContent = s + "s";
+};
 
 // Update the count down every 1 second
-var x = setInterval(function() {
-
-  var now = new Time().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;  
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("timer").innerHTML = seconds;
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
+let x = setInterval(() => {
+//clears countdown when all seconds are counted
+if (totalSeconds <= 0) {
     clearInterval(x);
-    document.getElementById("timer").innerHTML = "EXPIRED";
-  }
+}
+setSeconds(tempSeconds == 60 ? 59 : tempSeconds);
+totalSeconds--;
+tempSeconds = totalSeconds;
 }, 1000);
 
 
