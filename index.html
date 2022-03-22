@@ -8,12 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">   
-    <script src="./js/app.js"></script>
+    <script defer src="./js/app.js"></script>
     <audio>
         <source id="working" src="./audio/are-you-working.wav"></audio>
         <source id="talkToYou" src="./audio/can-i-talk-to-you.wav"></audio>
         <source id="smile" src="./audio/smile-for-us.wav"></audio>
-        <source if="whistle" src="./audio/wolf-whistle-14621.mp3"></audio>
+        <source id="whistle" src="./audio/wolf-whistle-14621.mp3"></audio>
+        <source id="kiss" src="./audio/kiss-real.aiff"></audio>
     </audio>
     <title>Document</title>
 </head>
@@ -30,6 +31,9 @@
                         <!-- <span id="minutes">0m</span> :  -->
                         <span id="seconds">0s</span>
                     </div> 
+                    <div>
+                        <progress id="health" value="100" max="100"> 32% </progress>
+                    </div>
             </div>      
             <img id="playerGirl" src="./images/test-girl.jpeg"/>
             <img id="subway" src="./images/subway.png"/>

@@ -83,6 +83,12 @@ aside {
   top: 50px;
 }
 
+#health {
+  position: relative;
+  left: 600px;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%)
+}
 
 #playerGirl {
   width: 25px;
