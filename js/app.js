@@ -8,6 +8,7 @@ const working = new Audio("audio/are-you-working.wav");
 const talkToYou = new Audio("audio/can-i-talk-to-you.wav");
 const smile = new Audio("audio/smile-for-us.wav");
 const kiss = new Audio("audio/kiss-real.mp3");
+const explode = new Audio("audio/explode-sound.mp3");
 // ^^ make this an array and have it randomly choose the sounds --- have an array that is silent
 
    // ---------- PLAYER MOVEMENT ---------- //
@@ -45,12 +46,14 @@ const kiss = new Audio("audio/kiss-real.mp3");
         switch (keyCode) {
             case 75: // "K" is "which key" 75 or event code "KeyK"
             if(playerImg.style.top > "360px" && playerImg.style.top < "393px") {
-                document.getElementById("man5").src = "./images/explosion.png";
-            }// image becomes explosion image
+                document.getElementById("man5").src="./images/explosion.png";
+                    explode.play("explode");
+                    health.value += 10;
+        // image becomes explosion image
                 break;
         }         
     }
-
+    }
     function moveUp() {
         if(playerImg.style.top > "-70px") {
         playerImg.style.top = parseInt(playerImg.style.top) - 2 + "px";
