@@ -155,7 +155,9 @@ const endGame = () => {
         /*
             here is where your endgame conditions and logic goes
         */
-        setTimeout(() => initData(), 3000); // after 3 seconds the data resets. 
+        setTimeout(() => initData(), 0); // after 3 seconds the data resets. 
+        alert("Game over");
+        window.location.reload();
         console.log('Game ended')
     } catch (error) {
         console.error('endGame(): ', error);
