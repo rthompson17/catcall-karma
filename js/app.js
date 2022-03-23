@@ -24,8 +24,10 @@ const kiss = new Audio("audio/kiss-real.mp3");
         var key_code = e.which || e.key;
         switch (key_code) {
                 case 32 || Space: // "K" is "which key" 75 or event code "KeyK"
-                moveUp();                
+                moveUp(); 
+                startTimer();               
         }
+
     }
 
     function moveUp() {
