@@ -23,7 +23,6 @@ const kiss = new Audio("audio/kiss-real.mp3");
     let hasGameStarted = false;
 
     function playerGo(e) {
-        
         var key_code = e.which || e.key;
         switch (key_code) {
                 case 32 || Space: // "K" is "which key" 75 or event code "KeyK"
@@ -34,7 +33,22 @@ const kiss = new Audio("audio/kiss-real.mp3");
                 }
                 break;           
         }
+    }
 
+    document.querySelector('body').addEventListener('keyup', (e) => {
+        deliverKarma(e);
+    });
+
+    function deliverKarma(event) {
+        const { keyCode } = event;
+        console.log(keyCode);
+        switch (keyCode) {
+            case 75: // "K" is "which key" 75 or event code "KeyK"
+            if(playerImg.style.top > "360px" && playerImg.style.top < "393px") {
+                document.getElementById("man5").src = "./images/explosion.png";
+            }// image becomes explosion image
+                break;
+        }         
     }
 
     function moveUp() {
@@ -45,6 +59,19 @@ const kiss = new Audio("audio/kiss-real.mp3");
         // can use this function to check on encounters with the catcallers
     }
     window.onload = init; // gameStart will init
+
+
+///////// DELIVER KARMA ///////////
+
+
+// function deliverKarma(event) {
+//         if(playerImg.style.top > "360px" && playerImg.style.top < "393px") {
+//             document.getElementById("man5").src = "./images/explosion.png";// image becomes explosion image
+//         }
+//     }
+
+
+
 
 //////////////// HEALTH METER ////////////////
 let health = document.getElementById("health")
