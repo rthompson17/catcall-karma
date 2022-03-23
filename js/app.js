@@ -20,12 +20,19 @@ const kiss = new Audio("audio/kiss-real.mp3");
         playerImg.style.top = "435px";
     }
 
+    let hasGameStarted = false;
+
     function playerGo(e) {
+        
         var key_code = e.which || e.key;
         switch (key_code) {
                 case 32 || Space: // "K" is "which key" 75 or event code "KeyK"
-                moveUp(); 
-                startTimer();               
+                moveUp();   
+                if(!hasGameStarted) {
+                    startTimer(); 
+                    hasGameStarted = true;
+                }
+                break;           
         }
 
     }
@@ -139,7 +146,7 @@ const initData = () => {
     hours = 0, // starting number of hours
     minutes = 0, // starting number of minutes
     seconds = 1, // starting number of seconds
-    totalSeconds = 3; // converts all to seconds
+    totalSeconds = 30; // converts all to seconds
 }
 
 initData(); // set intial data
