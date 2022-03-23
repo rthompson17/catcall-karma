@@ -5,7 +5,7 @@
 
 
 
-//AUDIO VARIABLES
+////////////  AUDIO VARIABLES  ////////////////
 const whistle = new Audio("audio/wolf-whistle-14621.mp3");
 const working = new Audio("audio/are-you-working.wav");
 const talkToYou = new Audio("audio/can-i-talk-to-you.wav");
@@ -14,7 +14,8 @@ const kiss = new Audio("audio/kiss-real.mp3");
 const explode = new Audio("audio/explode-sound.mp3");
 // ^^ make this an array and have it randomly choose the sounds --- have an array that is silent
 
-   // ---------- PLAYER MOVEMENT ---------- //
+
+//////////// PLAYER MOVEMENT ////////////
    
    let playerImg = null;
     function init() {
@@ -32,16 +33,20 @@ const explode = new Audio("audio/explode-sound.mp3");
                 case 32 || Space: // "K" is "which key" 75 or event code "KeyK"
                 moveUp();   
                 if(!hasGameStarted) {
-                    startTimer(); 
+                    timerStart(); 
                     hasGameStarted = true;
                 }
                 break;           
         }
     }
-
     document.querySelector('body').addEventListener('keyup', (e) => {
         deliverKarma(e);
     });
+
+
+
+///////// DELIVER KARMA ///////////
+
 
     function deliverKarma(event) {
         const { keyCode } = event;
@@ -83,6 +88,10 @@ const explode = new Audio("audio/explode-sound.mp3");
                 break;
          }
     }
+
+
+////////////////// GAMEBOARD EDGE LIMITATION //////////////////
+
     function moveUp() {
         if(playerImg.style.top > "-70px") {
         playerImg.style.top = parseInt(playerImg.style.top) - 2 + "px";
@@ -93,24 +102,14 @@ const explode = new Audio("audio/explode-sound.mp3");
     window.onload = init; // gameStart will init
 
 
-///////// DELIVER KARMA ///////////
-
-
-// function deliverKarma(event) {
-//         if(playerImg.style.top > "360px" && playerImg.style.top < "393px") {
-//             document.getElementById("man5").src = "./images/explosion.png";// image becomes explosion image
-//         }
-//     }
-
-
-
-
 //////////////// HEALTH METER ////////////////
 let health = document.getElementById("health")
 
 health.value -= 0;
 
-//////////////// CATCALLER AUDIO --- TRIGGER POINTS in PX => 371, 285, 209, 125, 61 (but odd number!!)
+
+//////////////// CATCALLER AUDIO //////////////////
+/// TRIGGER POINTS in PX => 371, 285, 209, 125, 61 (but odd number!!)
 
 const boardLimit = document.getElementById("gameBoard");
 function checkGoal(){
@@ -139,69 +138,18 @@ function checkGoal(){
 
 // setInterval(checkGoal, 10);
 
-//    // ------------ COUNTDOWN TIMER ---------------- //
-   
-// //event listener -- get setSeconds to begin on button click from "Start Game"
 
-// // document.getElementById('startGame').addEventListener('click', x);
-// // console.log(document.getElementById('startGame'));
+////////////////// COUNTDOWN TIMER //////////////////
+let startTimer 
+let seconds, totalSeconds;
 
-// const startBtn = document.getElementById('startGame');
-// startBtn.addEventListener('click', (event) => { 
-//     event.preventDefault();
-//     x()
-// }); 
-   
-// let days = 0; //starting number of days
-// let hours = 0; // starting number of hours
-// let minutes = 0; // starting number of minutes
-// let seconds = 1; // starting number of seconds
+function timerStart() {
+   startTimer = setInterval(setSeconds, 1000); 
+}
+    // ==> should contain what else starts the game -- press space bar and call startTimer
 
-// // converts all to seconds
-// let totalSeconds =
-// days * 60 * 60 * 24 + hours * 60 * 60 + minutes * 60 + seconds;
-
-// //temporary seconds holder
-// let tempSeconds = totalSeconds;
-
-// // calculates number of days, hours, minutes and seconds from a given number of seconds
-// const convert = (value, inSeconds) => {
-// if (value > inSeconds) {
-//     let x = value % inSeconds;
-//     tempSeconds = x;
-//     return (value - x) / inSeconds;
-// } else {
-//     return 0;
-// }
-// };
-
-
-// // //sets seconds
-// const setSeconds = (s) => {
-// document.querySelector("#seconds").textContent = s + "s";
-// };
-
-// // Update the count down every 1 second
-// let x = setInterval(() => {
-// //clears countdown when all seconds are counted
-// if (totalSeconds <= 0) {
-//     clearInterval(x);
-// }
-// setSeconds(tempSeconds == 60 ? 59 : tempSeconds);
-// totalSeconds--;
-// tempSeconds = totalSeconds;
-// }, 1000);
-
-// console.log(document.getElementById('startGame'));
-
-//////////// KEMEL'S SUGGESTION /////////////
-let days, hours, minutes, seconds, totalSeconds;
-const startTimer = () => setInterval(setSeconds, 1000); 
 
 const initData = () => {
-    days = 0, //starting number of days
-    hours = 0, // starting number of hours
-    minutes = 0, // starting number of minutes
     seconds = 1, // starting number of seconds
     totalSeconds = 3; // converts all to seconds
 }
@@ -216,17 +164,25 @@ const updateDOM = (key, value) => {
     }
 } 
 
+function setSeconds () {
+    totalSeconds === 0
+        ? stopTimer()
+        : totalSeconds--;
+    updateDOM('seconds', totalSeconds);
+} 
+
 const endGame = () => {
-    // try {
-    //     /*
-    //         here is where your endgame conditions and logic goes
-    //     */
-        setTimeout(() => initData(), 3000); // after 3 seconds the data resets. 
-         // display "ran out of time"
-        document.getElementById("winLose").textContent += "You missed the subway! Now you are late for work.";
-        window.location.reload();
-        clearInterval(setSeconds);
-        console.log('Game ended');
+    console.log(startTimer)   
+    if (totalSeconds === 0){
+            clearInterval(startTimer);
+            startTimer = null;
+        }  document.getElementById("winLose").textContent += "You missed the subway! Now you are late for work.";
+        // setTimeout(() => initData(), 3000); // after 3 seconds the data resets. 
+        //  // display "ran out of time"
+        
+        // // window.location.reload();
+        
+        // console.log('Game ended');
     }
     
     // } catch (error) {
@@ -240,53 +196,50 @@ const stopTimer = () => {
         here is where you want to call endGame();
     */ 
     endGame();
-    
+    console.log("testing stopTimer")
 };
-
-function setSeconds () {
-    totalSeconds === 0
-        ? stopTimer()
-        : totalSeconds--;
-    updateDOM('seconds', totalSeconds);
-} 
-
 
 
 console.log(document.getElementById('startGame'));
 
-   // ------------ COUNTDOWN TIMER ---------------- //
-   
-//event listener -- get setSeconds to begin on button click from "Start Game"
-
-// document.getElementById('startGame').addEventListener('click', x);
-// console.log(document.getElementById('startGame'));
 
 const startBtn = document.getElementById('startGame');
 startBtn.addEventListener('click', (event) => { 
     // event.preventDefault();
     // gameTimer()
-    startTimer();
+    timerStart(); // ==> set interval inside of startTimer (but make sure to declare it globally)
     // document.getElementById('startGame').disabled = true;
 }); 
    
-// -------------- AUDIO --------------- //
-  
-// WORKING CODE FOR AUDIO ////
-        // const whistle = new Audio("audio/wolf-whistle-14621.mp3");
-        // whistle.play("whistle"); 
-// END WORKING CODE FOR AUDIO ////
 
 
-// ------------
-// const areYouWorking = new Audio("working")
 
-// const whistle = new Audio("audio/wolf-whistle-14621.mp3");
-// whistle.play();
+//////// SET INTERVAL MDN CODE ////////////
 
-//// sample code
-//   audio.addEventListener('ended',function(){
-//         audio.src = "new url";
-//         audio.pause();
-//         audio.load();
-//         audio.play();
-//     });
+// variable to store our intervalID
+// let nIntervId;
+
+// function changeColor() {
+//   // check if already an interval has been set up
+//   if (!nIntervId) {
+//     nIntervId = setInterval(flashText, 1000);
+//   }
+// }
+
+// function flashText() {
+//   const oElem = document.getElementById("my_box");
+//   if (oElem.className === "go") {
+//     oElem.className = "stop";
+//   } else {
+//     oElem.className = "go";
+//   }
+// }
+
+// function stopTextColor() {
+//   clearInterval(nIntervId);
+//   // release our intervalID from the variable
+//   nIntervId = null; 
+// }
+
+// document.getElementById("start").addEventListener("click", changeColor);
+// document.getElementById("stop").addEventListener("click", stopTextColor);
