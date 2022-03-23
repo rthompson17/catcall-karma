@@ -74,18 +74,18 @@ function checkGoal(){
 
 // setInterval(checkGoal, 10);
 
-   // ------------ COUNTDOWN TIMER ---------------- //
+//    // ------------ COUNTDOWN TIMER ---------------- //
    
-//event listener -- get setSeconds to begin on button click from "Start Game"
+// //event listener -- get setSeconds to begin on button click from "Start Game"
 
-// document.getElementById('startGame').addEventListener('click', x);
-// console.log(document.getElementById('startGame'));
+// // document.getElementById('startGame').addEventListener('click', x);
+// // console.log(document.getElementById('startGame'));
 
-const startBtn = document.getElementById('startGame');
-startBtn.addEventListener('click', (event) => { 
-    event.preventDefault();
-    x()
-}); 
+// const startBtn = document.getElementById('startGame');
+// startBtn.addEventListener('click', (event) => { 
+//     event.preventDefault();
+//     x()
+// }); 
    
 // let days = 0; //starting number of days
 // let hours = 0; // starting number of hours
@@ -130,47 +130,75 @@ startBtn.addEventListener('click', (event) => {
 // console.log(document.getElementById('startGame'));
 
 //////////// KEMEL'S SUGGESTION /////////////
-let days = 0, //starting number of days
+let days, hours, minutes, seconds, totalSeconds;
+
+const initData = () => {
+    days = 0, //starting number of days
     hours = 0, // starting number of hours
     minutes = 0, // starting number of minutes
     seconds = 1, // starting number of seconds
-    totalSeconds = days * 60 * 60 * 24 + hours * 60 * 60 + minutes * 60 + seconds, // converts all to seconds
-    tempSeconds = totalSeconds; //temporary seconds holder
+    totalSeconds = 3; // converts all to seconds
+}
 
-// calculates number of days, hours, minutes and seconds from a given number of seconds
-const convert = (value, inSeconds) => {
-  if (value > inSeconds) {
-      let x = value % inSeconds;
-      tempSeconds = x;
-      return (value - x) / inSeconds;
-  } else {
-      return 0;
-  }
-};
-// sets seconds
-const setSeconds = (s) => {
-  document.querySelector("#seconds").textContent = s + "s";
+initData(); // set intial data
+
+const updateDOM = (key, value) => {
+    switch (key) {
+        case 'seconds': 
+            document.querySelector("#seconds").textContent = value + "s"; // updates seconds value
+            break;
+    }
+} 
+
+const endGame = () => {
+    try {
+        /*
+            here is where your endgame conditions and logic goes
+        */
+        setTimeout(() => initData(), 3000); // after 3 seconds the data resets. 
+        console.log('Game ended')
+    } catch (error) {
+        console.error('endGame(): ', error);
+    }
+}
+
+const stopTimer = () => {
+    clearInterval(setSeconds);
+    /* 
+        here is where you want to call endGame();
+    */ 
+    endGame();
+    
 };
 
-// Update the count down every 1 second
-const x = setInterval(() => {
-  //clears countdown when all seconds are counted
-  let seconds = "30" // WOULD LIKE FOR TIMER TO START AT 30 SECONDS
-  if (totalSeconds <= 0) clearInterval(x);
-  
-  setSeconds(
-    tempSeconds == 60 
-      ? 59 
-      : tempSeconds
-  );
-  
-  totalSeconds--;
-  tempSeconds = totalSeconds;
-}, 1000);
+function setSeconds () {
+    totalSeconds === 0
+        ? stopTimer()
+        : totalSeconds--;
+    updateDOM('seconds', totalSeconds);
+} 
+
+const startTimer = () => setInterval(setSeconds, 1000); 
+
+
+
 
 console.log(document.getElementById('startGame'));
 
+   // ------------ COUNTDOWN TIMER ---------------- //
+   
+//event listener -- get setSeconds to begin on button click from "Start Game"
 
+// document.getElementById('startGame').addEventListener('click', x);
+// console.log(document.getElementById('startGame'));
+
+const startBtn = document.getElementById('startGame');
+startBtn.addEventListener('click', (event) => { 
+    event.preventDefault();
+    // gameTimer()
+    startTimer();
+}); 
+   
 // -------------- AUDIO --------------- //
   
 // WORKING CODE FOR AUDIO ////
