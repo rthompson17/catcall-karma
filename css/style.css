@@ -83,13 +83,17 @@ aside {
   top: 50px;
 }
 
-#health {
+#MentalHealth {
   position: relative;
-  left: 600px;
+  left: 550px;
+  top: 30px;
   border-radius: 7px; 
-  box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 );
-
+  background-color: #04AA6D;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: white;
 }
+
 
 #playerGirl {
   width: 25px;
@@ -102,6 +106,14 @@ aside {
   flex-direction: column; */
   
 }
+
+#winLose {
+  position:fixed;
+  text-align: center;
+  left: 625px;
+  font-size: large;
+}
+
 div.men img {
   display: flex;
   width: 15px;

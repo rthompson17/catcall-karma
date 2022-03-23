@@ -1,6 +1,9 @@
 // VARIABLES
 // let playerImg = null;
 // const boardLimit = document.getElementById("gameBoard");
+//// onmousedown="mouseDown()"
+
+
 
 //AUDIO VARIABLES
 const whistle = new Audio("audio/wolf-whistle-14621.mp3");
@@ -45,32 +48,39 @@ const explode = new Audio("audio/explode-sound.mp3");
         console.log(keyCode);
         switch (keyCode) {
             case 75: // "K" is "which key" 75 or event code "KeyK"
-            if(playerImg.style.top > "360px" && playerImg.style.top < "381px") {
-                document.getElementById("man5").src="./images/explosion.png";
-                    explode.play("explode");
-                    health.value += 10;
+                const position = playerImg.style.top 
+                    ?    Number(
+                            playerImg.style.top.replace('px', '')
+                        )
+                    : 0;
+                console.log('position', position);
+                if(position > 360 && position < 381) {
+                    document.getElementById("man5").src="./images/explosion.png";
+                        explode.play("explode");
+                        health.value += 10;
+                    break;
+                }         
+                if(position > 283 && position < 313) {
+                    document.getElementById("man4").src="./images/explosion.png";
+                        explode.play("explode");
+                        health.value += 10;
+                }   
+                if(playerImg.style.top > "207px" && playerImg.style.top < "233") {
+                    document.getElementById("man3").src="./images/explosion.png";
+                        explode.play("explode");
+                        health.value += 10;
+                }   
+                if(position > 120 && position < 160) {
+                    document.getElementById("man2").src="./images/explosion.png";
+                        explode.play("explode");
+                        health.value += 10;
+                }   
+                if(playerImg.style.top > "55" && playerImg.style.top < "91") {
+                    document.getElementById("man1").src="./images/explosion.png";
+                        explode.play("explode");
+                        health.value += 10;
+                }
                 break;
-            }         
-            if(playerImg.style.top > "283px" && playerImg.style.top < "313px") {
-                document.getElementById("man4").src="./images/explosion.png";
-                    explode.play("explode");
-                    health.value += 10;
-            }   
-            if(playerImg.style.top > "207px" && playerImg.style.top < "233") {
-                document.getElementById("man3").src="./images/explosion.png";
-                    explode.play("explode");
-                    health.value += 10;
-            }   
-            if(playerImg.style.top > "153px" && playerImg.style.top < "113") {
-                document.getElementById("man2").src="./images/explosion.png";
-                    explode.play("explode");
-                    health.value += 10;
-            }   
-            if(playerImg.style.top > "55" && playerImg.style.top < "91") {
-                document.getElementById("man4").src="./images/explosion.png";
-                    explode.play("explode");
-                    health.value += 10;
-            }   
          }
     }
     function moveUp() {
@@ -108,26 +118,23 @@ function checkGoal(){
     console.log(characterTop);
     if (characterTop==="401px") {
         whistle.play("whistle");
-        health.value -= 10;
+        health.value -= 20;
     } if (characterTop==="333px") {
         working.play("working");
-        health.value -= 10;
+        health.value -= 30;
     } if (characterTop==="253px") {
         talkToYou.play("talkToYou");
-        health.value -= 10;
+        health.value -= 15;
     } if (characterTop==="173px") {
         smile.play("smile");
-        health.value -= 10;
+        health.value -= 20;
     } if (characterTop==="111px") {
         kiss.play("kiss");
-        health.value -= 10;
+        health.value -= 25;
     }
-
-
-//////////////// GAME BOARD LIMITATION /////////////
     else if(characterTop<="-70px"){
-        alert("Game over");
-    } // can check "mental health" within this function
+        document.getElementById("winLose").textContent += "You made it to the subway! Have a good day at work."
+    } 
 }
 
 // setInterval(checkGoal, 10);
@@ -189,13 +196,14 @@ function checkGoal(){
 
 //////////// KEMEL'S SUGGESTION /////////////
 let days, hours, minutes, seconds, totalSeconds;
+const startTimer = () => setInterval(setSeconds, 1000); 
 
 const initData = () => {
     days = 0, //starting number of days
     hours = 0, // starting number of hours
     minutes = 0, // starting number of minutes
     seconds = 1, // starting number of seconds
-    totalSeconds = 30; // converts all to seconds
+    totalSeconds = 3; // converts all to seconds
 }
 
 initData(); // set intial data
@@ -203,24 +211,28 @@ initData(); // set intial data
 const updateDOM = (key, value) => {
     switch (key) {
         case 'seconds': 
-            document.querySelector("#seconds").textContent = value + "s"; // updates seconds value
+            document.querySelector("#seconds").textContent = value + " SECONDS"; // updates seconds value
             break;
     }
 } 
 
 const endGame = () => {
-    try {
-        /*
-            here is where your endgame conditions and logic goes
-        */
-        setTimeout(() => initData(), 0); // after 3 seconds the data resets. 
-        alert("Game over");
+    // try {
+    //     /*
+    //         here is where your endgame conditions and logic goes
+    //     */
+        setTimeout(() => initData(), 3000); // after 3 seconds the data resets. 
+         // display "ran out of time"
+        document.getElementById("winLose").textContent += "You missed the subway! Now you are late for work.";
         window.location.reload();
-        console.log('Game ended')
-    } catch (error) {
-        console.error('endGame(): ', error);
+        clearInterval(setSeconds);
+        console.log('Game ended');
     }
-}
+    
+    // } catch (error) {
+    //     console.error('endGame(): ', error);
+    // }
+
 
 const stopTimer = () => {
     clearInterval(setSeconds);
@@ -238,9 +250,6 @@ function setSeconds () {
     updateDOM('seconds', totalSeconds);
 } 
 
-const startTimer = () => setInterval(setSeconds, 1000); 
-
-
 
 
 console.log(document.getElementById('startGame'));
@@ -254,9 +263,10 @@ console.log(document.getElementById('startGame'));
 
 const startBtn = document.getElementById('startGame');
 startBtn.addEventListener('click', (event) => { 
-    event.preventDefault();
+    // event.preventDefault();
     // gameTimer()
     startTimer();
+    // document.getElementById('startGame').disabled = true;
 }); 
    
 // -------------- AUDIO --------------- //
