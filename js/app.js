@@ -45,14 +45,33 @@ const explode = new Audio("audio/explode-sound.mp3");
         console.log(keyCode);
         switch (keyCode) {
             case 75: // "K" is "which key" 75 or event code "KeyK"
-            if(playerImg.style.top > "360px" && playerImg.style.top < "393px") {
+            if(playerImg.style.top > "360px" && playerImg.style.top < "381px") {
                 document.getElementById("man5").src="./images/explosion.png";
                     explode.play("explode");
                     health.value += 10;
-        // image becomes explosion image
                 break;
-        }         
-    }
+            }         
+            if(playerImg.style.top > "283px" && playerImg.style.top < "313px") {
+                document.getElementById("man4").src="./images/explosion.png";
+                    explode.play("explode");
+                    health.value += 10;
+            }   
+            if(playerImg.style.top > "207px" && playerImg.style.top < "233") {
+                document.getElementById("man3").src="./images/explosion.png";
+                    explode.play("explode");
+                    health.value += 10;
+            }   
+            if(playerImg.style.top > "153px" && playerImg.style.top < "113") {
+                document.getElementById("man2").src="./images/explosion.png";
+                    explode.play("explode");
+                    health.value += 10;
+            }   
+            if(playerImg.style.top > "55" && playerImg.style.top < "91") {
+                document.getElementById("man4").src="./images/explosion.png";
+                    explode.play("explode");
+                    health.value += 10;
+            }   
+         }
     }
     function moveUp() {
         if(playerImg.style.top > "-70px") {
@@ -87,19 +106,19 @@ const boardLimit = document.getElementById("gameBoard");
 function checkGoal(){
     let characterTop = playerImg.style.top;
     console.log(characterTop);
-    if (characterTop==="371px") {
+    if (characterTop==="401px") {
         whistle.play("whistle");
         health.value -= 10;
-    } if (characterTop==="285px") {
+    } if (characterTop==="333px") {
         working.play("working");
         health.value -= 10;
-    } if (characterTop==="209px") {
+    } if (characterTop==="253px") {
         talkToYou.play("talkToYou");
         health.value -= 10;
-    } if (characterTop==="125px") {
+    } if (characterTop==="173px") {
         smile.play("smile");
         health.value -= 10;
-    } if (characterTop==="61px") {
+    } if (characterTop==="111px") {
         kiss.play("kiss");
         health.value -= 10;
     }
