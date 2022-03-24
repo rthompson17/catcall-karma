@@ -1,9 +1,22 @@
 ////////////  AUDIO VARIABLES  ////////////////
+
 const whistle = new Audio("audio/wolf-whistle-14621.mp3");
 const working = new Audio("audio/are-you-working.wav");
 const talkToYou = new Audio("audio/can-i-talk-to-you.wav");
 const smile = new Audio("audio/smile-for-us.wav");
 const kiss = new Audio("audio/kiss-real.mp3");
+
+const allCatcalls=[whistle, working, talkToYou, smile, kiss, null, null, null, null, null, null, null];
+
+// allCatcalls=allCatcalls[Math.floor(Math.random() * allCatcalls.length)];
+
+let randomCatcall = function(){
+    const singleRandomCatcall = allCatcalls[Math.floor(Math.random() * allCatcalls.length)]; 
+    return singleRandomCatcall;
+};
+
+// let randomCatcall = allCatcalls[Math.floor(Math.random() * allCatcalls.length)];
+
 const explode = new Audio("audio/explode-sound.mp3");
 // ^^ make this an array and have it randomly choose the sounds --- have an array that is silent
 
@@ -51,20 +64,20 @@ const explode = new Audio("audio/explode-sound.mp3");
                         )
                     : 0;
                 console.log('position', position);
-                if(position > 360 && position < 381) {
-                    document.getElementById("man5").src="./images/explosion.png".classList.add("explosion");
+                if(position > 360 && position < 407) {
+                    document.getElementById("man5").src="./images/explosion.png";
                         explode.play("explode");
                         health.value += 10;
                         healthStatus()
                     break;
                 }         
-                if(position > 283 && position < 313) {
+                if(position > 283 && position < 340) {
                     document.getElementById("man4").src="./images/explosion.png";
                         explode.play("explode");
                         health.value += 10;
                         healthStatus()
                 }   
-                if(playerImg.style.top > "207px" && playerImg.style.top < "233") {
+                if(position > 207 && position < 250) {
                     document.getElementById("man3").src="./images/explosion.png";
                         explode.play("explode");
                         health.value += 10;
@@ -102,27 +115,34 @@ function checkGoal(){
     console.log(characterTop);
     console.log(health.value)
     healthStatus()
-    if (characterTop==="401px") {
-        whistle.play("whistle");
-        health.value -= 45;
+    if (characterTop==="415px") {
+        // whistle.play("whistle");
+        console.log(randomCatcall());
+        randomCatcall().play();
+        health.value -= 20;
         endGame();
         
-    } if (characterTop==="333px") {
-        working.play("working");
+    } if (characterTop==="343px") {
+        // working.play("working");
+        randomCatcall().play();
         health.value -= 30;
         endGame();
         
     } if (characterTop==="253px") {
-        talkToYou.play("talkToYou");
-        health.value -= 15;
+        // talkToYou.play("talkToYou");
+        randomCatcall().play();
+        health.value -= 35;
+        endGame();
        
     } if (characterTop==="173px") {
         smile.play("smile");
         health.value -= 20;
+        endGame();
         
     } if (characterTop==="111px") {
         kiss.play("kiss");
         health.value -= 25;
+        endGame();
         
     }
     else if(characterTop<="-70px"){

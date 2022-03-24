@@ -134,6 +134,14 @@ div.men img {
   -webkit-filter: saturate(40%);
 }
 
+div.men2 img {
+  display: static;
+  width: 15px;
+  height: auto;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
+}
+
 #man1 {
   width: 15px;
   height: auto;
@@ -179,14 +187,7 @@ div.men img {
   -webkit-filter: saturate(40%);
 }
 
-#man6 {
-  width: 15px;
-  height: auto;
-  margin-left: 148px;
-  margin-bottom: 3px;
-  filter:invert(100%);
-  -webkit-filter: saturate(40%);
-}
+
 
 
 
