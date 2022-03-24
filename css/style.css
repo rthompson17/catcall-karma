@@ -64,7 +64,7 @@ aside {
   width: 80px;
   height: auto;
   margin-left:70px;
-  margin-top: -15px;
+  margin-top: -65px;
 }
 
 #subway {
@@ -128,33 +128,57 @@ div.men img {
 }
 
 #man1 {
+  width: 15px;
+  height: auto;
   margin-left: 181px;
   margin-bottom: 26px;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
 }
 
 #man2 {
+  width: 15px;
+  height: auto;
   margin-left: 182px;
   margin-bottom: 49px;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
 }
 
 #man3 {
+  width: 15px;
+  height: auto;
   margin-left: 140px;
   margin-bottom: 33px;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
 }
 
 #man4 {
+  width: 15px;
+  height: auto;
   margin-left: 145px;
   margin-bottom: 48px;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
 }
 
 #man5 {
+  width: 15px;
+  height: auto;
   margin-left: 182px;
   margin-bottom: 23px;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
 }
 
 #man6 {
+  width: 15px;
+  height: auto;
   margin-left: 148px;
   margin-bottom: 3px;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
 }
 
 

@@ -100,26 +100,28 @@ const boardLimit = document.getElementById("gameBoard");
 function checkGoal(){
     let characterTop = playerImg.style.top;
     console.log(characterTop);
+    console.log(health.value)
+    healthStatus()
     if (characterTop==="401px") {
         whistle.play("whistle");
-        health.value -= 20;
-        healthStatus()
+        health.value -= 100;
+        
     } if (characterTop==="333px") {
         working.play("working");
         health.value -= 30;
-        healthStatus()
+        
     } if (characterTop==="253px") {
         talkToYou.play("talkToYou");
         health.value -= 15;
-        healthStatus()
+       
     } if (characterTop==="173px") {
         smile.play("smile");
         health.value -= 20;
-        healthStatus()
+        
     } if (characterTop==="111px") {
         kiss.play("kiss");
         health.value -= 25;
-        healthStatus()
+        
     }
     else if(characterTop<="-70px"){
         document.getElementById("winLose").textContent += "You made it to the subway! Have a good day at work."
@@ -146,7 +148,7 @@ function timerStart() {
 
 const initData = () => {
     seconds = 1, // starting number of seconds
-    totalSeconds = 30; // converts all to seconds
+    totalSeconds = 5; // converts all to seconds
     healthStatus()
 }
 
@@ -167,16 +169,10 @@ function setSeconds () {
     updateDOM('seconds', totalSeconds);
 } 
 
-const endGame = () => {
-    console.log(startTimer)   
-    if (totalSeconds === 0){
-            clearInterval(startTimer);
-            startTimer = null;
-        }  document.getElementById("winLose").textContent += " Train has left the station!";
-    }
+
     
 
-////////////////// GAMEBOARD EDGE LIMITATION //////////////////
+////////////////// MOVEMENT //////////////////
 
 function moveUp() {
     if(playerImg.style.top > "-70px") {
@@ -186,9 +182,35 @@ function moveUp() {
     }
     checkGoal();
 }
+// console.log(checkGoal)
 
 
-///////////////////////
+/////////////////////// END GAME LOGIC ///////////
+// If health === 0, you lose ==> disable spacebar and timer
+// Else, if player reaches subway, you win ==> disable timer
+// If timer === 0, you lose ==> disable spacebar
+
+
+
+const endGame = () => {
+    console.log(startTimer)  
+    if (health.value == "0") {
+        clearInterval(startTimer);
+        startTimer = null;
+        document.getElementById("winLose").textContent += " You're out of mental health!";
+    }
+    else if(characterTop<="-70px"){
+        document.getElementById("winLose").textContent += "You made it to the subway! Have a good day at work."
+        clearInterval(startTimer);
+        startTimer = null;
+    } 
+    else if(totalSeconds === 0){
+            clearInterval(startTimer);
+            startTimer = null;
+        }   document.getElementById("winLose").textContent += " Train has left the station!";
+    return;
+    }
+
 
 const stopTimer = () => {
     clearInterval(setSeconds);
@@ -200,14 +222,6 @@ const stopTimer = () => {
 };
 
 
-console.log(document.getElementById('startGame'));
-
-
-const startBtn = document.getElementById('startGame');
-startBtn.addEventListener('click', (event) => { 
-    timerStart(); // ==> set interval inside of startTimer (but make sure to declare it globally)
-    // document.getElementById('startGame').disabled = true;
-}); 
    
 
 window.onload = init; // gameStart will init
