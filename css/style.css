@@ -12,7 +12,9 @@ body {
 h1 {
   color: darkslateblue;
   text-align: center;
-  font-family: "Permanent Marker", cursive;
+  /* font-family: "Permanent Marker", cursive; */
+  font-family: 'Urbanist', sans-serif;
+  border: 2px solid darkslateblue;
 }
 
 h3 {
@@ -80,10 +82,11 @@ aside {
 }
 
 #timer {
-  /* width: 50px;
-  height: auto; */
+  color: darkslateblue;
+  text-align: center;
+  font-family: "Permanent Marker", cursive;
   position: relative;
-  left: 520px;
+  left: 550px;
   top: 50px;
 }
 
@@ -187,7 +190,7 @@ div.men img {
 
 
 
-/* MODAL */
+/* MODAL 1 */
 .hidden { display:none; }
 
 .pageCover { 
@@ -232,7 +235,7 @@ div.men img {
 #close:hover { background-color:#c000c0; }
 
 
-/* modal2 */
+/* MODAL 2 */
 .pageCover2 { 
   position:fixed; 
   z-index:10; 
@@ -275,7 +278,7 @@ div.men img {
 #close2:hover { background-color:#c000c0; }
 
 
-/* modal3 */
+/* MODAL 3 */
 .pageCover3 { 
   position:fixed; 
   z-index:10; 
