@@ -1,10 +1,3 @@
-// VARIABLES
-// let playerImg = null;
-// const boardLimit = document.getElementById("gameBoard");
-//// onmousedown="mouseDown()"
-
-
-
 ////////////  AUDIO VARIABLES  ////////////////
 const whistle = new Audio("audio/wolf-whistle-14621.mp3");
 const working = new Audio("audio/are-you-working.wav");
@@ -42,7 +35,6 @@ const explode = new Audio("audio/explode-sound.mp3");
     document.querySelector('body').addEventListener('keyup', (e) => {
         deliverKarma(e);
     });
-
 
 
 ///////// DELIVER KARMA ///////////
@@ -93,8 +85,6 @@ const explode = new Audio("audio/explode-sound.mp3");
                 break;
          }
     }
-
-
 
 
 //////////////// HEALTH METER ////////////////
@@ -165,7 +155,7 @@ initData(); // set intial data
 const updateDOM = (key, value) => {
     switch (key) {
         case 'seconds': 
-            document.querySelector("#seconds").textContent = value + " SECONDS"; // updates seconds value
+            document.querySelector("#seconds").textContent ="Train arrives in " + value + " seconds"; // updates seconds value
             break;
     }
 } 
@@ -182,18 +172,10 @@ const endGame = () => {
     if (totalSeconds === 0){
             clearInterval(startTimer);
             startTimer = null;
-        }  document.getElementById("winLose").textContent += "You missed the subway! Now you are late for work.";
-        // setTimeout(() => initData(), 3000); // after 3 seconds the data resets. 
-        //  // display "ran out of time"
-        
-        // // window.location.reload();
-        
-        // console.log('Game ended');
+        }  document.getElementById("winLose").textContent += " Train has left the station!";
     }
     
-    // } catch (error) {
-    //     console.error('endGame(): ', error);
-    // }
+
 ////////////////// GAMEBOARD EDGE LIMITATION //////////////////
 
 function moveUp() {
@@ -203,7 +185,6 @@ function moveUp() {
         return;
     }
     checkGoal();
-    // can use this function to check on encounters with the catcallers
 }
 
 
@@ -224,8 +205,6 @@ console.log(document.getElementById('startGame'));
 
 const startBtn = document.getElementById('startGame');
 startBtn.addEventListener('click', (event) => { 
-    // event.preventDefault();
-    // gameTimer()
     timerStart(); // ==> set interval inside of startTimer (but make sure to declare it globally)
     // document.getElementById('startGame').disabled = true;
 }); 
@@ -233,33 +212,3 @@ startBtn.addEventListener('click', (event) => {
 
 window.onload = init; // gameStart will init
 
-
-//////// SET INTERVAL MDN CODE ////////////
-
-// variable to store our intervalID
-// let nIntervId;
-
-// function changeColor() {
-//   // check if already an interval has been set up
-//   if (!nIntervId) {
-//     nIntervId = setInterval(flashText, 1000);
-//   }
-// }
-
-// function flashText() {
-//   const oElem = document.getElementById("my_box");
-//   if (oElem.className === "go") {
-//     oElem.className = "stop";
-//   } else {
-//     oElem.className = "go";
-//   }
-// }
-
-// function stopTextColor() {
-//   clearInterval(nIntervId);
-//   // release our intervalID from the variable
-//   nIntervId = null; 
-// }
-
-// document.getElementById("start").addEventListener("click", changeColor);
-// document.getElementById("stop").addEventListener("click", stopTextColor);
