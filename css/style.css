@@ -221,6 +221,7 @@ div.men img {
   font-size:1.1em;
 }
 
+
 #close { 
   background-color:#800080;
   color:#ff0;
@@ -231,5 +232,87 @@ div.men img {
 #close:hover { background-color:#c000c0; }
 
 
+/* modal2 */
+.pageCover2 { 
+  position:fixed; 
+  z-index:10; 
+  background-color:rgba(0,0,0,.25); 
+  width:100vw; 
+  height:100vh; 
+  top:0; 
+  left:0;
+}
+
+.modal2 { 
+  position:absolute; 
+  z-index:100; 
+  background-color:aliceblue;
+  border:2px double grey;
+  width:200px; 
+  height:200px; 
+  top:30%; 
+  left:30%; 
+  text-align:center;
+}
+
+.modalTitle2 {
+  margin:0;
+  background-color: orange;
+  color:#ff0;
+  padding:5px;
+  font-weight:bold;
+  font-size:1.1em;
+}
 
 
+#close2 { 
+  background-color:orange;
+  color:#ff0;
+  border:1px solid #e0e0e0;
+  padding:5px 10px;
+}
+
+#close2:hover { background-color:#c000c0; }
+
+
+/* modal3 */
+.pageCover3 { 
+  position:fixed; 
+  z-index:10; 
+  background-color:rgba(0,0,0,.25); 
+  width:100vw; 
+  height:100vh; 
+  top:0; 
+  left:0;
+}
+
+.modal3 { 
+  position:absolute; 
+  z-index:100; 
+  background-color:aliceblue;
+  border:2px double grey;
+  width:200px; 
+  height:200px; 
+  top:30%; 
+  left:30%; 
+  text-align:center;
+}
+
+.modalTitle3 {
+  margin:0;
+  background-color:green;
+  color:#ff0;
+  padding:5px;
+  font-weight:bold;
+  font-size:1.1em;
+}
+
+
+#close3 { 
+  background-color:green;
+  color:#ff0;
+  border:1px solid #e0e0e0;
+  padding:5px 10px;
+}
+
+#close3:hover { background-color:#c000c0; }

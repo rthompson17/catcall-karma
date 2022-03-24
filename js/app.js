@@ -104,7 +104,7 @@ function checkGoal(){
     healthStatus()
     if (characterTop==="401px") {
         whistle.play("whistle");
-        health.value -= 100;
+        health.value -= 45;
         endGame();
         
     } if (characterTop==="333px") {
@@ -126,7 +126,11 @@ function checkGoal(){
         
     }
     else if(characterTop<="-70px"){
-        document.getElementById("winLose").textContent += "You made it to the subway! Have a good day at work."
+        // document.getElementById("winLose").textContent += "You made it to the subway! Have a good day at work."
+        modal3.classList.remove("hidden");
+            pageCover3.classList.remove("hidden"); 
+            main.addEventListener("focus", preventFocus);
+            clearInterval(startTimer);
     } 
 }
 
@@ -152,7 +156,7 @@ function timerStart() {
 
 const initData = () => {
     seconds = 1, // starting number of seconds
-    totalSeconds = 5; // converts all to seconds
+    totalSeconds = 30; // converts all to seconds
     healthStatus()
 }
 
@@ -196,7 +200,12 @@ function moveUp() {
 
 let modal = document.querySelector(".modal");
 let pageCover = document.querySelector(".pageCover");
+let modal2 = document.querySelector(".modal2");
+let pageCover2 = document.querySelector(".pageCover2");
+let modal3 = document.querySelector(".modal3");
+let pageCover3 = document.querySelector(".pageCover3");
 let main = document.querySelector("main");    
+////////
 
 const endGame = () => {
     console.log(isTimerOn)  
@@ -210,16 +219,36 @@ const endGame = () => {
     if (!isTimerOn){
             // clearInterval(startTimer);
             startTimer = null;
-            document.getElementById("winLose").textContent += " Train has left the station!";
+            // document.getElementById("winLose").textContent += " Train has left the station!";
+            modal2.classList.remove("hidden");
+            pageCover2.classList.remove("hidden"); 
+            main.addEventListener("focus", preventFocus);
+            clearInterval(startTimer);
         }
         return;
     }
 
+    
+    document.getElementById("close3").addEventListener("click", function(){
+        window.location.reload();
+        // modal.classList.add("hidden");
+        // pageCover.classList.add("hidden"); 
+        // main.removeEventListener("focus", preventFocus);
+      }); 
+
+    document.getElementById("close2").addEventListener("click", function(){
+        window.location.reload();
+        // modal.classList.add("hidden");
+        // pageCover.classList.add("hidden"); 
+        // main.removeEventListener("focus", preventFocus);
+      }); 
+
     document.getElementById("close").addEventListener("click", function(){
-        modal.classList.add("hidden");
-        pageCover.classList.add("hidden"); 
-        main.removeEventListener("focus", preventFocus);
-      });
+        window.location.reload();
+        // modal.classList.add("hidden");
+        // pageCover.classList.add("hidden"); 
+        // main.removeEventListener("focus", preventFocus);
+    }); 
       
       function preventFocus (evt){
         evt.preventDefault();
