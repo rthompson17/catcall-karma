@@ -52,7 +52,7 @@ const explode = new Audio("audio/explode-sound.mp3");
                     : 0;
                 console.log('position', position);
                 if(position > 360 && position < 381) {
-                    document.getElementById("man5").src="./images/explosion.png";
+                    document.getElementById("man5").src="./images/explosion.png".classList.add("explosion");
                         explode.play("explode");
                         health.value += 10;
                         healthStatus()
@@ -104,7 +104,7 @@ function checkGoal(){
     healthStatus()
     if (characterTop==="401px") {
         whistle.play("whistle");
-        health.value -= 50;
+        health.value -= 100;
         endGame();
         
     } if (characterTop==="333px") {
@@ -194,12 +194,17 @@ function moveUp() {
 // Else, if player reaches subway, you win ==> disable timer
 // If timer === 0, you lose ==> disable spacebar
 
-
+let modal = document.querySelector(".modal");
+let pageCover = document.querySelector(".pageCover");
+let main = document.querySelector("main");    
 
 const endGame = () => {
     console.log(isTimerOn)  
     if (health.value === 0) {
-        document.getElementById("winLose").textContent += " You're out of mental health!";
+        // document.getElementById("winLose").textContent += " You're out of mental health!";
+        modal.classList.remove("hidden");
+        pageCover.classList.remove("hidden"); 
+        main.addEventListener("focus", preventFocus);
         clearInterval(startTimer);
     }; 
     if (!isTimerOn){
@@ -209,6 +214,16 @@ const endGame = () => {
         }
         return;
     }
+
+    document.getElementById("close").addEventListener("click", function(){
+        modal.classList.add("hidden");
+        pageCover.classList.add("hidden"); 
+        main.removeEventListener("focus", preventFocus);
+      });
+      
+      function preventFocus (evt){
+        evt.preventDefault();
+      }
 
 
 const stopTimer = () => {
@@ -224,22 +239,24 @@ const stopTimer = () => {
 window.onload = init; // gameStart will init
 
 
+/////////// MODAL
+// let modal = document.querySelector(".modal");
+// let pageCover = document.querySelector(".pageCover");
+// let main = document.querySelector("main");        
 
-// NOT WORKING END GAME
-// const endGame = () => {
-//     console.log(startTimer)  
-//     if (health.value == "0") {
-//         clearInterval(startTimer);
-//         startTimer = null;
-//         document.getElementById("winLose").textContent += " You're out of mental health!";
-//     } else if(characterTop<="-70px"){
-//         document.getElementById("winLose").textContent += "You made it to the subway! Have a good day at work."
-//         clearInterval(startTimer);
-//         startTimer = null;
-//     } else if(totalSeconds === 0){
-//             clearInterval(startTimer);
-//             startTimer = null;
-//             document.getElementById("winLose").textContent += " Train has left the station!";
-//         }
-//     return;
-//     }
+// document.getElementById("open").addEventListener("click", function(){
+//   modal.classList.remove("hidden");
+//   pageCover.classList.remove("hidden"); 
+//   main.addEventListener("focus", preventFocus);
+// });
+
+
+// document.getElementById("close").addEventListener("click", function(){
+//   modal.classList.add("hidden");
+//   pageCover.classList.add("hidden"); 
+//   main.removeEventListener("focus", preventFocus);
+// });
+
+// function preventFocus (evt){
+//   evt.preventDefault();
+// }
