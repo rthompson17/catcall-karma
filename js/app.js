@@ -104,11 +104,13 @@ function checkGoal(){
     healthStatus()
     if (characterTop==="401px") {
         whistle.play("whistle");
-        health.value -= 100;
+        health.value -= 50;
+        endGame();
         
     } if (characterTop==="333px") {
         working.play("working");
         health.value -= 30;
+        endGame();
         
     } if (characterTop==="253px") {
         talkToYou.play("talkToYou");
@@ -139,9 +141,11 @@ function healthStatus() {
 ////////////////// COUNTDOWN TIMER //////////////////
 let startTimer 
 let seconds, totalSeconds;
+let isTimerOn
 
 function timerStart() {
    startTimer = setInterval(setSeconds, 1000); 
+   isTimerOn = true;
 }
     // ==> should contain what else starts the game -- press space bar and call startTimer
 
@@ -193,36 +197,49 @@ function moveUp() {
 
 
 const endGame = () => {
-    console.log(startTimer)  
-    if (health.value == "0") {
-        clearInterval(startTimer);
-        startTimer = null;
+    console.log(isTimerOn)  
+    if (health.value === 0) {
         document.getElementById("winLose").textContent += " You're out of mental health!";
-    }
-    else if(characterTop<="-70px"){
-        document.getElementById("winLose").textContent += "You made it to the subway! Have a good day at work."
         clearInterval(startTimer);
-        startTimer = null;
-    } 
-    else if(totalSeconds === 0){
-            clearInterval(startTimer);
+    }; 
+    if (!isTimerOn){
+            // clearInterval(startTimer);
             startTimer = null;
-        }   document.getElementById("winLose").textContent += " Train has left the station!";
-    return;
+            document.getElementById("winLose").textContent += " Train has left the station!";
+        }
+        return;
     }
 
 
 const stopTimer = () => {
-    clearInterval(setSeconds);
-    /* 
-        here is where you want to call endGame();
-    */ 
-    endGame();
+    clearInterval(startTimer);
+    isTimerOn = false;
+    if(health.value > 0) {
+        endGame();
+    }
     console.log("testing stopTimer")
 };
 
 
-   
-
 window.onload = init; // gameStart will init
 
+
+
+// NOT WORKING END GAME
+// const endGame = () => {
+//     console.log(startTimer)  
+//     if (health.value == "0") {
+//         clearInterval(startTimer);
+//         startTimer = null;
+//         document.getElementById("winLose").textContent += " You're out of mental health!";
+//     } else if(characterTop<="-70px"){
+//         document.getElementById("winLose").textContent += "You made it to the subway! Have a good day at work."
+//         clearInterval(startTimer);
+//         startTimer = null;
+//     } else if(totalSeconds === 0){
+//             clearInterval(startTimer);
+//             startTimer = null;
+//             document.getElementById("winLose").textContent += " Train has left the station!";
+//         }
+//     return;
+//     }

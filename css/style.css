@@ -48,7 +48,7 @@ aside {
   align-items: flex-start;
   align-content: space-between;
   justify-content: flex-start;
-  background-image: url("/Users/ryannthompson/GA-main/code/catcall-karma-game-project/images/map-image.jpg");
+  background-image: url("../images/map-image2.png");
   background-repeat: no-repeat;
   background-size: 500px 500px;
 }
@@ -164,7 +164,7 @@ div.men img {
 }
 
 #man5 {
-  width: 15px;
+  width: 25px;
   height: auto;
   margin-left: 182px;
   margin-bottom: 23px;
