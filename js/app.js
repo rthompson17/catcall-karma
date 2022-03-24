@@ -63,43 +63,38 @@ const explode = new Audio("audio/explode-sound.mp3");
                     document.getElementById("man5").src="./images/explosion.png";
                         explode.play("explode");
                         health.value += 10;
+                        healthStatus()
                     break;
                 }         
                 if(position > 283 && position < 313) {
                     document.getElementById("man4").src="./images/explosion.png";
                         explode.play("explode");
                         health.value += 10;
+                        healthStatus()
                 }   
                 if(playerImg.style.top > "207px" && playerImg.style.top < "233") {
                     document.getElementById("man3").src="./images/explosion.png";
                         explode.play("explode");
                         health.value += 10;
+                        healthStatus()
                 }   
                 if(position > 120 && position < 160) {
                     document.getElementById("man2").src="./images/explosion.png";
                         explode.play("explode");
                         health.value += 10;
+                        healthStatus()
                 }   
                 if(playerImg.style.top > "55" && playerImg.style.top < "91") {
                     document.getElementById("man1").src="./images/explosion.png";
                         explode.play("explode");
                         health.value += 10;
+                        healthStatus()
                 }
                 break;
          }
     }
 
 
-////////////////// GAMEBOARD EDGE LIMITATION //////////////////
-
-    function moveUp() {
-        if(playerImg.style.top > "-70px") {
-        playerImg.style.top = parseInt(playerImg.style.top) - 2 + "px";
-        } 
-        checkGoal();
-        // can use this function to check on encounters with the catcallers
-    }
-    window.onload = init; // gameStart will init
 
 
 //////////////// HEALTH METER ////////////////
@@ -118,18 +113,23 @@ function checkGoal(){
     if (characterTop==="401px") {
         whistle.play("whistle");
         health.value -= 20;
+        healthStatus()
     } if (characterTop==="333px") {
         working.play("working");
         health.value -= 30;
+        healthStatus()
     } if (characterTop==="253px") {
         talkToYou.play("talkToYou");
         health.value -= 15;
+        healthStatus()
     } if (characterTop==="173px") {
         smile.play("smile");
         health.value -= 20;
+        healthStatus()
     } if (characterTop==="111px") {
         kiss.play("kiss");
         health.value -= 25;
+        healthStatus()
     }
     else if(characterTop<="-70px"){
         document.getElementById("winLose").textContent += "You made it to the subway! Have a good day at work."
@@ -137,6 +137,11 @@ function checkGoal(){
 }
 
 // setInterval(checkGoal, 10);
+
+function healthStatus() {
+    let progressLevel = document.getElementById('health').value;
+    document.getElementById("healthLevel").innerHTML = "Mental Health " +progressLevel;
+}
 
 
 ////////////////// COUNTDOWN TIMER //////////////////
@@ -151,7 +156,8 @@ function timerStart() {
 
 const initData = () => {
     seconds = 1, // starting number of seconds
-    totalSeconds = 3; // converts all to seconds
+    totalSeconds = 30; // converts all to seconds
+    healthStatus()
 }
 
 initData(); // set intial data
@@ -188,7 +194,20 @@ const endGame = () => {
     // } catch (error) {
     //     console.error('endGame(): ', error);
     // }
+////////////////// GAMEBOARD EDGE LIMITATION //////////////////
 
+function moveUp() {
+    if(playerImg.style.top > "-70px") {
+    playerImg.style.top = parseInt(playerImg.style.top) - 2 + "px";
+    } else if (playerImg.style.top <= "-70px") {
+        return;
+    }
+    checkGoal();
+    // can use this function to check on encounters with the catcallers
+}
+
+
+///////////////////////
 
 const stopTimer = () => {
     clearInterval(setSeconds);
@@ -212,6 +231,7 @@ startBtn.addEventListener('click', (event) => {
 }); 
    
 
+window.onload = init; // gameStart will init
 
 
 //////// SET INTERVAL MDN CODE ////////////
