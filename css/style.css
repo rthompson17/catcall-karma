@@ -18,9 +18,11 @@ h1 {
 }
 
 h3 {
-  color: darkgreen;
+  color: rgb(103, 83, 150);
   text-align: center;
+  font-family: Urbanist, sans-serif;
 }
+
 header {
   font-size: 6vmin;
   padding: 1vmin;
@@ -72,6 +74,25 @@ aside {
 .explosion {
   width: 25px;
 }
+ul {
+  position: absolute;
+  text-align: center;
+  width: 285px;
+  margin-left: 500px;
+  margin-right: auto;
+  margin-top: 100px;
+  font-family: Urbanist, sans-serif;
+}
+
+#timer {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  position: relative;
+  left: 540px;
+  top: 10px;
+  font-family: Urbanist, sans-serif;
+}
 
 #subway {
   display: flex;
@@ -81,24 +102,17 @@ aside {
   margin-top: -50px;
 }
 
-#timer {
-  color: darkslateblue;
-  text-align: center;
-  font-family: "Permanent Marker", cursive;
-  position: relative;
-  left: 550px;
-  top: 50px;
-}
 
 #MentalHealth {
   position: relative;
-  left: 550px;
-  top: 100px;
-  border-radius: 7px; 
-  background-color: #04AA6D;
-  text-align: center; /* To center it horizontally (if you want) */
-  line-height: 0px; /* To center it vertically */
+  left: 570px;
+  top: -30px;
+  background-color: rgb(121, 173, 159);
+  text-align: center;
+  line-height: 0px;
   color: white;
+  font-family: Bitter, serif;
+  border-radius: 7px;
 }
 
 #healthLevel {
@@ -147,9 +161,8 @@ div.men img {
   width: 15px;
   height: auto;
   margin-left: 182px;
-  margin-bottom: 49px;
-  filter:invert(100%);
-  -webkit-filter: saturate(40%);
+  margin-bottom: 35px;
+  filter: saturate(40%);
 }
 
 #man3 {
@@ -165,9 +178,8 @@ div.men img {
   width: 15px;
   height: auto;
   margin-left: 145px;
-  margin-bottom: 48px;
-  filter:invert(100%);
-  -webkit-filter: saturate(40%);
+  margin-bottom: 38px;
+  filter: saturate(40%);
 }
 
 #man5 {
@@ -179,14 +191,6 @@ div.men img {
   -webkit-filter: saturate(40%);
 }
 
-#man6 {
-  width: 15px;
-  height: auto;
-  margin-left: 148px;
-  margin-bottom: 3px;
-  filter:invert(100%);
-  -webkit-filter: saturate(40%);
-}
 
 
 
