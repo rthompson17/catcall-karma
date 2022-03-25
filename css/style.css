@@ -12,7 +12,6 @@ body {
 h1 {
   color: darkslateblue;
   text-align: center;
-  /* font-family: "Permanent Marker", cursive; */
   font-family: "Urbanist", sans-serif;
   border: 2px solid darkslateblue;
 }
@@ -105,8 +104,8 @@ ul {
   top: -30px;
   border-radius: 7px;
   background-color: #79ad9f;
-  text-align: center; /* To center it horizontally (if you want) */
-  line-height: 0px; /* To center it vertically */
+  text-align: center; 
+  line-height: 0px; 
   color: white;
   font-family: "Bitter", serif;
 }
@@ -121,9 +120,6 @@ ul {
   position: relative;
   left: 140px;
   top: 370px;
-  /* margin-left: -50px;
-  margin-bottom: 50px;
-  flex-direction: column; */
 }
 
 #winLose {

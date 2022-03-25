@@ -1,6 +1,6 @@
 ![CK_title](https://user-images.githubusercontent.com/2974287/160070860-16a8a86e-9acf-46cb-8d81-286bad957d97.jpeg)
 
-Catcall Karma is a game about street harassment revenge. 
+Catcall Karma is a cringe-worthy but lighthearted game about street harassment revenge. 
 
 ## Getting Started
 How to play:
