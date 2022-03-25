@@ -13,15 +13,14 @@ h1 {
   color: darkslateblue;
   text-align: center;
   /* font-family: "Permanent Marker", cursive; */
-  font-family: 'Urbanist', sans-serif;
+  font-family: "Urbanist", sans-serif;
   border: 2px solid darkslateblue;
 }
 
 h3 {
   color: #675396;
   text-align: center;
-  font-family: 'Urbanist', sans-serif;
-
+  font-family: "Urbanist", sans-serif;
 }
 header {
   font-size: 6vmin;
@@ -40,11 +39,6 @@ main {
   justify-content: center;
   align-items: center;
   background-color: rgb(202, 161, 202);
-}
-
-aside {
-  background-color: #a2b4da;
-  grid-column: 1 / 3;
 }
 
 .gameBoard {
@@ -67,7 +61,7 @@ aside {
   background-color: #a2cbb6;
   width: 80px;
   height: auto;
-  margin-left:70px;
+  margin-left: 70px;
   margin-top: -65px;
 }
 
@@ -78,11 +72,11 @@ aside {
 ul {
   position: absolute;
   text-align: center;
-  width: 285px; 
-	margin-left: 500px; 
-	margin-right: auto;
-  margin-top: 120px;
-  font-family: 'Urbanist', sans-serif;
+  width: 285px;
+  margin-left: 500px;
+  margin-right: auto;
+  margin-top: 100px;
+  font-family: "Urbanist", sans-serif;
 }
 
 #subway {
@@ -91,52 +85,49 @@ ul {
   height: auto;
   margin-left: 100px;
   margin-top: -50px;
-  font-family: 'Permanent Marker', cursive;
+  font-family: "Permanent Marker", cursive;
 }
 
 #timer {
   color: white;
   text-align: center;
   font-family: "Permanent Marker", cursive;
-  font-size:20px;
+  font-size: 20px;
   position: relative;
   left: 540px;
   top: 10px;
-  font-family: 'Urbanist', sans-serif;
+  font-family: "Urbanist", sans-serif;
 }
 
 #MentalHealth {
   position: relative;
   left: 570px;
   top: -30px;
-  border-radius: 7px; 
-  background-color: #79AD9F;
+  border-radius: 7px;
+  background-color: #79ad9f;
   text-align: center; /* To center it horizontally (if you want) */
   line-height: 0px; /* To center it vertically */
   color: white;
-  font-family: 'Bitter', serif;
-
+  font-family: "Bitter", serif;
 }
 
 #healthLevel {
-position:static;
+  position: static;
 }
 
-
 #playerGirl {
-  width: 25px;
+  width: 30px;
   height: auto;
   position: relative;
-    left: 149px;
-    top: 370px;
+  left: 140px;
+  top: 370px;
   /* margin-left: -50px;
   margin-bottom: 50px;
   flex-direction: column; */
-  
 }
 
 #winLose {
-  position:fixed;
+  position: fixed;
   text-align: center;
   left: 625px;
   top: 400px;
@@ -147,7 +138,7 @@ div.men img {
   display: flex;
   width: 15px;
   height: auto;
-  filter:invert(100%);
+  filter: invert(100%);
   -webkit-filter: saturate(40%);
 }
 
@@ -155,7 +146,7 @@ div.men2 img {
   display: static;
   width: 15px;
   height: auto;
-  filter:invert(100%);
+  filter: invert(100%);
   -webkit-filter: saturate(40%);
 }
 
@@ -164,7 +155,7 @@ div.men2 img {
   height: auto;
   margin-left: 181px;
   margin-bottom: 26px;
-  filter:invert(100%);
+  filter: invert(100%);
   -webkit-filter: saturate(40%);
 }
 
@@ -173,7 +164,7 @@ div.men2 img {
   height: auto;
   margin-left: 182px;
   margin-bottom: 35px;
-  filter:invert(100%);
+  filter: invert(100%);
   -webkit-filter: saturate(40%);
 }
 
@@ -182,7 +173,7 @@ div.men2 img {
   height: auto;
   margin-left: 140px;
   margin-bottom: 33px;
-  filter:invert(100%);
+  filter: invert(100%);
   -webkit-filter: saturate(40%);
 }
 
@@ -191,7 +182,7 @@ div.men2 img {
   height: auto;
   margin-left: 145px;
   margin-bottom: 38px;
-  filter:invert(100%);
+  filter: invert(100%);
   -webkit-filter: saturate(40%);
 }
 
@@ -200,207 +191,139 @@ div.men2 img {
   height: auto;
   margin-left: 182px;
   margin-bottom: 23px;
-  filter:invert(100%);
+  filter: invert(100%);
   -webkit-filter: saturate(40%);
 }
-/* ///////// STATIC MEN FOR ATMOSPHERE ////////// */
-/* 
-#man6 {
-  width: 15px;
-  height: auto;
-  margin-left: 382px;
-  margin-bottom: 123px;
-  filter:invert(100%);
-  -webkit-filter: saturate(40%);
-}
-
-#man7 {
-  width: 15px;
-  height: auto;
-  margin-left: 182px;
-  margin-bottom: 23px;
-  filter:invert(100%);
-  -webkit-filter: saturate(40%);
-}
-#man8 {
-  width: 15px;
-  height: auto;
-  margin-left: 182px;
-  margin-bottom: 23px;
-  filter:invert(100%);
-  -webkit-filter: saturate(40%);
-}
-#man9 {
-  width: 15px;
-  height: auto;
-  margin-left: 182px;
-  margin-bottom: 23px;
-  filter:invert(100%);
-  -webkit-filter: saturate(40%);
-}
-#man10 {
-  width: 15px;
-  height: auto;
-  margin-left: 182px;
-  margin-bottom: 23px;
-  filter:invert(100%);
-  -webkit-filter: saturate(40%);
-}
-#man11 {
-  width: 15px;
-  height: auto;
-  margin-left: 182px;
-  margin-bottom: 23px;
-  filter:invert(100%);
-  -webkit-filter: saturate(40%);
-}
-#man12 {
-  width: 15px;
-  height: auto;
-  margin-left: 182px;
-  margin-bottom: 23px;
-  filter:invert(100%);
-  -webkit-filter: saturate(40%);
-}
-#man13 {
-  width: 15px;
-  height: auto;
-  margin-left: 182px;
-  margin-bottom: 23px;
-  filter:invert(100%);
-  -webkit-filter: saturate(40%);
-} */
-
-
-
-
 
 /* MODAL 1 */
-.hidden { display:none; }
-
-.pageCover { 
-  position:fixed; 
-  z-index:10; 
-  background-color:rgba(0,0,0,.25); 
-  width:100vw; 
-  height:100vh; 
-  top:0; 
-  left:0;
+.hidden {
+  display: none;
 }
 
-.modal { 
-  position:absolute; 
-  z-index:100; 
-  background-color:aliceblue;
-  border:2px double grey;
-  width:200px; 
-  height:200px; 
-  top:30%; 
-  left:30%; 
-  text-align:center;
+.pageCover {
+  position: fixed;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.modal {
+  position: absolute;
+  z-index: 100;
+  background-color: aliceblue;
+  border: 2px double grey;
+  width: 200px;
+  height: 200px;
+  top: 30%;
+  left: 30%;
+  text-align: center;
 }
 
 .modalTitle {
-  margin:0;
-  background-color:#00a;
-  color:#ff0;
-  padding:5px;
-  font-weight:bold;
-  font-size:1.1em;
+  margin: 0;
+  background-color: #00a;
+  color: #ff0;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
-
-#close { 
-  background-color:#800080;
-  color:#ff0;
-  border:1px solid #e0e0e0;
-  padding:5px 10px;
+#close {
+  background-color: #800080;
+  color: #ff0;
+  border: 1px solid #e0e0e0;
+  padding: 5px 10px;
 }
 
-#close:hover { background-color:#c000c0; }
-
+#close:hover {
+  background-color: #c000c0;
+}
 
 /* MODAL 2 */
-.pageCover2 { 
-  position:fixed; 
-  z-index:10; 
-  background-color:rgba(0,0,0,.25); 
-  width:100vw; 
-  height:100vh; 
-  top:0; 
-  left:0;
+.pageCover2 {
+  position: fixed;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
 }
 
-.modal2 { 
-  position:absolute; 
-  z-index:100; 
-  background-color:aliceblue;
-  border:2px double grey;
-  width:200px; 
-  height:200px; 
-  top:30%; 
-  left:30%; 
-  text-align:center;
+.modal2 {
+  position: absolute;
+  z-index: 100;
+  background-color: aliceblue;
+  border: 2px double grey;
+  width: 200px;
+  height: 200px;
+  top: 30%;
+  left: 30%;
+  text-align: center;
 }
 
 .modalTitle2 {
-  margin:0;
+  margin: 0;
   background-color: orange;
-  color:#ff0;
-  padding:5px;
-  font-weight:bold;
-  font-size:1.1em;
+  color: #ff0;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
-
-#close2 { 
-  background-color:orange;
-  color:#ff0;
-  border:1px solid #e0e0e0;
-  padding:5px 10px;
+#close2 {
+  background-color: orange;
+  color: #ff0;
+  border: 1px solid #e0e0e0;
+  padding: 5px 10px;
 }
 
-#close2:hover { background-color:#c000c0; }
-
+#close2:hover {
+  background-color: #c000c0;
+}
 
 /* MODAL 3 */
-.pageCover3 { 
-  position:fixed; 
-  z-index:10; 
-  background-color:rgba(0,0,0,.25); 
-  width:100vw; 
-  height:100vh; 
-  top:0; 
-  left:0;
+.pageCover3 {
+  position: fixed;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
 }
 
-.modal3 { 
-  position:absolute; 
-  z-index:100; 
-  background-color:aliceblue;
-  border:2px double grey;
-  width:200px; 
-  height:200px; 
-  top:30%; 
-  left:30%; 
-  text-align:center;
+.modal3 {
+  position: absolute;
+  z-index: 100;
+  background-color: aliceblue;
+  border: 2px double grey;
+  width: 200px;
+  height: 200px;
+  top: 30%;
+  left: 30%;
+  text-align: center;
 }
 
 .modalTitle3 {
-  margin:0;
-  background-color:green;
-  color:#ff0;
-  padding:5px;
-  font-weight:bold;
-  font-size:1.1em;
+  margin: 0;
+  background-color: green;
+  color: #ff0;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
-
-#close3 { 
-  background-color:green;
-  color:#ff0;
-  border:1px solid #e0e0e0;
-  padding:5px 10px;
+#close3 {
+  background-color: green;
+  color: #ff0;
+  border: 1px solid #e0e0e0;
+  padding: 5px 10px;
 }
 
-#close3:hover { background-color:#c000c0; }
+#close3:hover {
+  background-color: #c000c0;
+}
