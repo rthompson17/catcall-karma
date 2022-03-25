@@ -28,11 +28,12 @@ I used ‘if’ statements to deduct “mental health” points when a player is
 ## Countdown Timer and endGame Logic
 The countdown timer uses functions to track the scenario in which a player might win or lose the game and updates the DOM so that the countdown displays on the screen in real time. 
 
+A player wins the game if they reach the subway, which is located at a specific pixel location on the game board, before the timer reaches zero. A player loses the game if their mental health status reaches zero, or if the counter reaches zero before they reach the subway on the game board.
+
 ![CK_loss_time](https://user-images.githubusercontent.com/2974287/160070993-db147df7-2a91-4192-8c5d-fb595f7b609f.jpeg)
 ![CK_loss_mental_health](https://user-images.githubusercontent.com/2974287/160071002-5ce23e1c-5d82-41ac-9ef2-0bd9d3de78f6.jpeg)
 ![CK_win](https://user-images.githubusercontent.com/2974287/160071011-c1b06d37-f983-40a3-ab18-efb1a80fe324.jpeg)
 
-A player wins the game if they reach the subway, which is located at a specific pixel location on the game board, before the timer reaches zero. A player loses the game if their mental health status reaches zero, or if the counter reaches zero before they reach the subway on the game board.
 
 ## Technologies Used
 Catcall Karma was programmed using HTML, CSS and JavaScript.
@@ -49,10 +50,10 @@ Catcall Karma was programmed using HTML, CSS and JavaScript.
 - Bigger explosions!
 
 ### Attribution:
-https://www.freepik.com/vectors/north-america">North america vector created by freepik - www.freepik.com  
-https://www.freepik.com/vectors/background'>Background vector created by rawpixel.com - www.freepik.com    
-https://www.freepik.com/vectors/flat-building'>Flat building vector created by vectorpocket - www.freepik.com  
-https://www.freepik.com/vectors/abstract'>Abstract vector created by macrovector - www.freepik.com
+https://www.freepik.com/vectors/north-america" North america vector created by freepik - www.freepik.com  
+https://www.freepik.com/vectors/background' Background vector created by rawpixel.com - www.freepik.com    
+https://www.freepik.com/vectors/flat-building' Flat building vector created by vectorpocket - www.freepik.com  
+https://www.freepik.com/vectors/abstract' Abstract vector created by macrovector - www.freepik.com
  
  "created with the voices from LOVO @ www.lovo.ai.
 
