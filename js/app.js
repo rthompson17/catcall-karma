@@ -17,7 +17,6 @@ const allCatcalls = [
   null,
 ];
 
-// allCatcalls=allCatcalls[Math.floor(Math.random() * allCatcalls.length)];
 
 let randomCatcall = function () {
   const singleRandomCatcall =
@@ -25,10 +24,8 @@ let randomCatcall = function () {
   return singleRandomCatcall;
 };
 
-// let randomCatcall = allCatcalls[Math.floor(Math.random() * allCatcalls.length)];
 
 const explode = new Audio("audio/explode-sound.mp3");
-// ^^ make this an array and have it randomly choose the sounds --- have an array that is silent
 
 //////////// PLAYER MOVEMENT ////////////
 
@@ -57,15 +54,6 @@ function playerGo(e) {
 document.querySelector("body").addEventListener("keyup", (e) => {
   deliverKarma(e);
 });
-
-////// FREEZE PLAYER INPUT ///////
-
-// let userInputAllowed = true;
-// function stopUserInput() {
-//     let addEventListener.key_code;
-//     if (modal.classList.remove("hidden"));
-//     userInputAllowed = false;
-// }
 
 ///////// DELIVER KARMA ///////////
 
@@ -119,7 +107,6 @@ let health = document.getElementById("health");
 health.value -= 0;
 
 //////////////// CATCALLER AUDIO //////////////////
-/// TRIGGER POINTS in PX => 371, 285, 209, 125, 61 (but odd number!!)
 
 const boardLimit = document.getElementById("gameBoard");
 function checkGoal() {
@@ -216,9 +203,6 @@ function moveUp() {
 
 
 /////////////////////// END GAME LOGIC ///////////
-// If health === 0, you lose ==> disable spacebar and timer
-// Else, if player reaches subway, you win ==> disable timer
-// If timer === 0, you lose ==> disable spacebar
 
 let modal = document.querySelector(".modal");
 let pageCover = document.querySelector(".pageCover");
