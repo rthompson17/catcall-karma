@@ -25,3 +25,12 @@ The countdown timer uses functions to track the scenario in which a player might
 ![CK_win](https://user-images.githubusercontent.com/2974287/160071011-c1b06d37-f983-40a3-ab18-efb1a80fe324.jpeg)
 
 A player wins the game if they reach the subway, which is located at a specific pixel location on the game board, before the timer reaches zero. A player loses the game if their mental health status reaches zero, or if the counter reaches zero before they reach the subway on the game board.
+
+### Attribution:
+https://www.freepik.com/vectors/north-america">North america vector created by freepik - www.freepik.com  
+https://www.freepik.com/vectors/background'>Background vector created by rawpixel.com - www.freepik.com    
+https://www.freepik.com/vectors/flat-building'>Flat building vector created by vectorpocket - www.freepik.com  
+https://www.freepik.com/vectors/abstract'>Abstract vector created by macrovector - www.freepik.com
+ 
+ "created with the voices from LOVO @ www.lovo.ai.
+
