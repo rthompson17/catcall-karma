@@ -1,6 +1,14 @@
 ![CK_title](https://user-images.githubusercontent.com/2974287/160070860-16a8a86e-9acf-46cb-8d81-286bad957d97.jpeg)
 
-Catcall Karma is a game about street harassment revenge. It was programmed using HTML, CSS and JavaScript.
+Catcall Karma is a game about street harassment revenge. 
+
+## Getting Started
+How to play:
+- Press and hold the SPACEBAR to START and WALK. Travel from your apartment (APT) to the subway without missing the train or losing your mental health.
+- If catcalled, your Mental Health will be diminished. Press the "K" key to DELIVER KARMA and launch a grenade at your catcaller for partial restoration of your Mental Health. (Do not kill innocent men!)
+- Reach the Subway without losing all of your Mental Health or missing the train, and you win! If Mental Health or Time Remaining reach 0, you lose and the game is over.
+
+Play here: https://rthompson17.github.io/catcaller-game/
 
 ## Player Movement and Triggers
 ![CK_start_apartment](https://user-images.githubusercontent.com/2974287/160070901-1152bd90-869c-48f3-b984-930e4933d350.jpeg)
@@ -25,6 +33,20 @@ The countdown timer uses functions to track the scenario in which a player might
 ![CK_win](https://user-images.githubusercontent.com/2974287/160071011-c1b06d37-f983-40a3-ab18-efb1a80fe324.jpeg)
 
 A player wins the game if they reach the subway, which is located at a specific pixel location on the game board, before the timer reaches zero. A player loses the game if their mental health status reaches zero, or if the counter reaches zero before they reach the subway on the game board.
+
+## Technologies Used
+Catcall Karma was programmed using HTML, CSS and JavaScript.
+
+## Next Steps
+- Animated player and catcallers
+- Camera movement and zoom to follow the player
+- Choice of player outfit before the game starts
+- Choice of weapon for the player
+- Snazzier CSS overall
+- Mobile friendly version
+- Text-to-speech responses to catcallers from player input
+- More catcall variety, harder levels and paths of travel
+- Bigger explosions!
 
 ### Attribution:
 https://www.freepik.com/vectors/north-america">North america vector created by freepik - www.freepik.com  
