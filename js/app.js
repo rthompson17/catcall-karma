@@ -232,7 +232,6 @@ const endGame = () => {
 };
 
 document.getElementById("close3").addEventListener("click", function () {
-  
   window.location.reload();
 });
 
@@ -258,4 +257,3 @@ const stopTimer = () => {
 };
 
 window.onload = init; // gameStart will init
-//modal.classList.add("hidden");
