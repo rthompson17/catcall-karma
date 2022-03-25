@@ -49,7 +49,16 @@ const explode = new Audio("audio/explode-sound.mp3");
         deliverKarma(e);
     });
 
+////// FREEZE PLAYER INPUT ///////
 
+    // let userInputAllowed = true;
+    // function stopUserInput() {
+    //     let addEventListener.key_code;
+    //     if (modal.classList.remove("hidden"));
+    //     userInputAllowed = false;
+    // }
+
+    
 ///////// DELIVER KARMA ///////////
 
 
@@ -176,7 +185,7 @@ function timerStart() {
 
 const initData = () => {
     seconds = 1, // starting number of seconds
-    totalSeconds = 30; // converts all to seconds
+    totalSeconds = 25; // converts all to seconds
     healthStatus()
 }
 
@@ -211,6 +220,7 @@ function moveUp() {
     checkGoal();
 }
 // console.log(checkGoal)
+
 
 
 /////////////////////// END GAME LOGIC ///////////

@@ -10,8 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">   
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Urbanist:wght@500&display=swap" rel="stylesheet">
-    <script defer src="./js/app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@200;400&family=Permanent+Marker&family=Urbanist:wght@500&display=swap" rel="stylesheet">    <script defer src="./js/app.js"></script>
     <audio>
         <source id="working" src="./audio/are-you-working.wav"></audio>
         <source id="talkToYou" src="./audio/can-i-talk-to-you.wav"></audio>
@@ -24,7 +25,7 @@
       <div class="hidden modal">
         <div class="modalTitle">You lost</div>
         <p>
-          You ran out of mental health.
+          Don't let the bastards get you down! Deliver more karma and protect your mental health.
         </p>
         <button id="close" >Play Again</button>
       </div>
@@ -42,9 +43,9 @@
       <!-- <button id="open3">button 3</button> -->
       <div class="hidden pageCover3"></div>
       <div class="hidden modal3">
-        <div class="modalTitle3">You win!</div>
+        <div class="modalTitle3">YOU WIN!</div>
         <p>
-          You made it to the train with your mental health! <br> Have a good day.
+          You made it to the train with your mental health! <br> Have a good day!
         </p>
         <button id="close3" >Play Again</button>
       </div>
@@ -53,21 +54,29 @@
 <body onkeydown="playerGo(event)">
   <div class="boardFraming">
     <h1>CATCALL KARMA</h1>
-    <h3>Sometimes, karma has to be done manually. <br>Or does it? The choice is yours.</h3>    
+    <h3>Catcalling got you down? Take karma into your own hands.</h3>    
     <aside class="flex-ctr"></aside>
     <div>
         <main class="gameBoard">
             <div id="timer-container">
+                <div><ul class="instructions"><b>HOW TO PLAY</b>
+                    <br></br>
+                    <li><b>Press the SPACEBAR to start.</b> to travel from your apartment (APT) to the subway without missing the train or losing your mental health.</li>
+                    <li>If catcalled, your Mental Health will be diminished. <b>Press the "K" key</b> to DELIVER KARMA and launch a grenade at your catcaller, restoring your Mental Health.</li>
+                    <li>Reach the Subway without losing all of your Mental Health or missing the train, and you win!</li>
+                    <li>If Mental Health or Time Remaining reach 0, you lose and the game is over.</li>
+                <br><b>GOOD LUCK!</b>
+                </ul></div>
                     <div id="timer">
                         <!-- <span id="days">0d</span> : <span id="hours">0h</span> : -->
                         <!-- <span id="minutes">0m</span> :  -->
-                        <span id="seconds">Train Arriving Soon</span>
+                        <span id="seconds">Next Train Arriving Soon</span>
                     </div> 
             </div>     
             <img id="playerGirl" src="./images/test-girl.jpeg"/>
-            <img id="subway" src="./images/subway.png"/>
+            <!-- <img id="subway" src="./images/subway.png"/> -->
             <div id="MentalHealth">
-                <progress id="health" value="100" max="100"></progress>
+                <progress id="health" value="100" max="100">MENTAL HEALTH</progress>
                 <p id="healthLevel"></p>
             </div>
             <div class="men">
@@ -78,7 +87,7 @@
                 <img id="man5" src="./images/blue-man.png"/>
             </div> 
             <p id="winLose"></p> 
-        <div class="men2"> 
+        <!-- <div class="men2"> 
             <img id="man6" src="./images/blue-man.png"/>
             <img id="man7" src="./images/blue-man.png"/>
             <img id="man8" src="./images/blue-man.png"/>
@@ -87,7 +96,7 @@
             <img id="man11" src="./images/blue-man.png"/>
             <img id="man12" src="./images/blue-man.png"/>
             <img id="man13" src="./images/blue-man.png"/> 
-        </div>
+        </div> -->
             <!-- <img class="apartment" src="./images/apartment.png"/> -->
         </main>
     </div>

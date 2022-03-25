@@ -18,8 +18,10 @@ h1 {
 }
 
 h3 {
-  color: darkgreen;
+  color: #675396;
   text-align: center;
+  font-family: 'Urbanist', sans-serif;
+
 }
 header {
   font-size: 6vmin;
@@ -37,7 +39,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: thistle;
+  background-color: rgb(202, 161, 202);
 }
 
 aside {
@@ -73,32 +75,47 @@ aside {
   width: 25px;
 }
 
+ul {
+  position: absolute;
+  text-align: center;
+  width: 285px; 
+	margin-left: 500px; 
+	margin-right: auto;
+  margin-top: 120px;
+  font-family: 'Urbanist', sans-serif;
+}
+
 #subway {
   display: flex;
   width: 50px;
   height: auto;
   margin-left: 100px;
   margin-top: -50px;
+  font-family: 'Permanent Marker', cursive;
 }
 
 #timer {
-  color: darkslateblue;
+  color: white;
   text-align: center;
   font-family: "Permanent Marker", cursive;
+  font-size:20px;
   position: relative;
-  left: 550px;
-  top: 50px;
+  left: 540px;
+  top: 10px;
+  font-family: 'Urbanist', sans-serif;
 }
 
 #MentalHealth {
   position: relative;
-  left: 550px;
-  top: 100px;
+  left: 570px;
+  top: -30px;
   border-radius: 7px; 
-  background-color: #04AA6D;
+  background-color: #79AD9F;
   text-align: center; /* To center it horizontally (if you want) */
   line-height: 0px; /* To center it vertically */
   color: white;
+  font-family: 'Bitter', serif;
+
 }
 
 #healthLevel {
@@ -111,7 +128,7 @@ position:static;
   height: auto;
   position: relative;
     left: 149px;
-    top: 406px;
+    top: 370px;
   /* margin-left: -50px;
   margin-bottom: 50px;
   flex-direction: column; */
@@ -155,7 +172,7 @@ div.men2 img {
   width: 15px;
   height: auto;
   margin-left: 182px;
-  margin-bottom: 49px;
+  margin-bottom: 35px;
   filter:invert(100%);
   -webkit-filter: saturate(40%);
 }
@@ -173,7 +190,7 @@ div.men2 img {
   width: 15px;
   height: auto;
   margin-left: 145px;
-  margin-bottom: 48px;
+  margin-bottom: 38px;
   filter:invert(100%);
   -webkit-filter: saturate(40%);
 }
@@ -186,6 +203,73 @@ div.men2 img {
   filter:invert(100%);
   -webkit-filter: saturate(40%);
 }
+/* ///////// STATIC MEN FOR ATMOSPHERE ////////// */
+/* 
+#man6 {
+  width: 15px;
+  height: auto;
+  margin-left: 382px;
+  margin-bottom: 123px;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
+}
+
+#man7 {
+  width: 15px;
+  height: auto;
+  margin-left: 182px;
+  margin-bottom: 23px;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
+}
+#man8 {
+  width: 15px;
+  height: auto;
+  margin-left: 182px;
+  margin-bottom: 23px;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
+}
+#man9 {
+  width: 15px;
+  height: auto;
+  margin-left: 182px;
+  margin-bottom: 23px;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
+}
+#man10 {
+  width: 15px;
+  height: auto;
+  margin-left: 182px;
+  margin-bottom: 23px;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
+}
+#man11 {
+  width: 15px;
+  height: auto;
+  margin-left: 182px;
+  margin-bottom: 23px;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
+}
+#man12 {
+  width: 15px;
+  height: auto;
+  margin-left: 182px;
+  margin-bottom: 23px;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
+}
+#man13 {
+  width: 15px;
+  height: auto;
+  margin-left: 182px;
+  margin-bottom: 23px;
+  filter:invert(100%);
+  -webkit-filter: saturate(40%);
+} */
 
 
 
