@@ -8,7 +8,7 @@ How to play:
 - If catcalled, your Mental Health will be diminished. Press the "K" key to DELIVER KARMA and launch a grenade at your catcaller for partial restoration of your Mental Health. (Do not kill innocent men!)
 - Reach the Subway without losing all of your Mental Health or missing the train, and you win! If Mental Health or Time Remaining reach 0, you lose and the game is over.
 
-Play here: https://rthompson17.github.io/catcaller-game/
+Play here: https://rthompson17.github.io/catcaller-karma/
 
 ## Player Movement and Triggers
 ![CK_start_apartment](https://user-images.githubusercontent.com/2974287/160070901-1152bd90-869c-48f3-b984-930e4933d350.jpeg)
